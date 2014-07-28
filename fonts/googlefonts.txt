@@ -1,0 +1,23 @@
+Fonts List
+
+Headings:
+font-family: 'Crafty Girls', cursive;
+
+Heading paragraphs:
+font-family: 'Lobster', cursive;
+
+
+Forms:
+font-family: 'Varela Round', sans-serif;
+
+Navigation:
+font-family: 'Indie Flower', cursive;
+
+Extra:
+font-family: 'Alegreya', serif;
+
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Francois One', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Lobster Two', cursive;

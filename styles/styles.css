@@ -1,0 +1,257 @@
+
+
+/*styles for logged in Users*/
+
+.backimage {
+
+	padding:10px;
+	padding-bottom: 20px;
+}
+.container_log {
+	
+	background-color: white;
+	min-height: 400px;
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	padding: 0px;
+}
+.container_log h2 {
+
+	/*background-color: #78afff;*/
+	padding: 10px;
+font-family: 'Pacifico', cursive;
+	
+
+	}
+/*logged in Header & Navigation menu*/
+.head_log {
+	margin-top: 0;
+	background-color: #364d6b;
+	height: 100px;
+	width: 960px;
+
+}
+/*login*/
+.head_log p { 
+
+	height: 40px;
+	text-align: right;
+	margin-right: 20px;
+	padding-top: 10px;
+}
+.head_log p a {
+
+	margin-right: 20px;
+	color: #ccdff4;
+	text-align: right;
+	text-decoration: none;
+	font-family: 'Varela Round', sans-serif;
+}
+.head_log p a:hover {
+
+	color: #ffffff;
+	font-style: italic;
+}
+/*end login*/
+/*menu*/
+.head_log nav ul {
+	float: right;
+font-family: 'Indie Flower', cursive;
+
+}
+
+.head_log nav li {
+
+	text-decoration: none;
+	display: inline;
+	color: #ffffff;
+	padding: 10px; 
+}
+
+.head_log nav li a {
+
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.head_log nav li a:hover {
+
+	font-style: italic;
+	font-size: 16px;
+}
+
+
+/*end menu */
+
+/*Register Page*/
+
+#register
+
+{
+font-family: 'Varela Round', sans-serif;
+
+}
+
+
+#languages 
+
+{
+	/*float: left;*/
+	width: 400px;
+	
+}
+
+
+/*End of Register*/
+
+/*footer*/
+.footy_log{
+	background-color: #171d1d; 
+	height: 100px;
+	position: relative;
+	color: white;
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+
+/*end of styles for logged in users*/
+
+/*Styles for public pages*/
+
+/*Container for non logged in users */
+.container {
+
+	background-color: #0058ba;
+	/*min-height: 400px;*/
+
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+
+}
+
+
+/*header-public*/
+
+.head {
+	margin-top: 0;
+	background-color: #364d6b;
+	height: 100px;
+	width: 960px;
+	border-bottom: 4px solid;
+	border-color: #3c3a3a;
+	margin-bottom: auto;
+}
+#gears{
+	margin-top: auto;
+	padding: 0px;
+}
+.logo 
+{
+	width: 150px;
+	height: 90px;
+	float: left;
+	border: 2px solid;
+}
+
+.head p { 
+
+	height: 40px;
+	text-align: right;
+	margin-right: 20px;
+	padding-top: 10px;
+
+}
+
+
+/*login*/
+.head p a {
+
+	color: #ccdff4;
+	text-align: right;
+	text-decoration: none;
+	font-family: 'Varela Round', sans-serif;
+}
+.head p a:hover {
+
+	color: #ffffff;
+	font-style: italic;
+}
+/*end login*/
+
+/*end header*/
+
+/*menu*/
+.head nav ul {
+
+/*height: 20px;
+width: 485px;
+position: relative;
+right: 10px;*/
+float: right;
+font-family: 'Indie Flower', cursive;
+}
+
+.head nav li {
+
+	text-decoration: none;
+	display: inline;
+	color: #ffffff;
+	padding: 10px; 
+}
+
+.head nav li a {
+
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.head nav li a:hover {
+
+	font-style: italic;
+	font-size: 16px;
+}
+
+/*.header nav li a:
+*/
+/*end menu */
+
+.footy{
+	border-top: 2.5px solid #cccccc;
+	background-color: #171d1d; 
+	height: 100px;
+	position: relative;
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*homepage */
+/*
+#lnkgear{
+	background-image:url(../imgs/join.png);
+	background-repeat: no-repeat;
+	*/
+
+}
+#section_homeb {
+
+	
+	background-color: #0058ba;
+	min-height: 683px;
+
+
+}
+/*#gears{
+
+	background-repeat: no-repeat;
+	background-image:url(../imgs/backgears1.png);
+
+}*/
+/*end homepage*/
