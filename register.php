@@ -12,13 +12,18 @@
 <img src="./imgs/pageGears.png">
 	<form id="register" name="register" action="">
 		<h3>Experience</h3>
+		<fieldset>
+			<legend>General</legend>
 		<label for="name"> Name:</label><br />
 		<input id="name" name="name" type="text">
 		<br />
 		<label for="city"> City:</label><br />
 		<input id="city" name="city" type="text">
 		<br />
-		
+		<label for="email"> Preferred E-mail:</label><br />
+		<input id="email" name="email" type="email" placeholder="email you want to use for project communication" size="42">
+		<br />
+		</fieldset>
 		<fieldset id="languages" width="400px">
 			<legend>Languages</legend>
 		<label for="asp.net"> asp.net:</label>
@@ -162,10 +167,52 @@
 		<input id="projectmanage" name="projectmanage" type="radio" value="1-2 years">1-2 years
 		<input id="projectmanage" name="projectmanage" type="radio" value="2-3 years">2-3 years
 		<input id="projectmanage" name="projectmanage" type="radio" value="4+ years">4+ years
-
-
+		<br /> <br />
+		<label for="preference">Role Preference:</label>
+		<br />
+		<input id="p_frontend" name="p_frontend" type="radio" value="Font-End">Front-End
+		<input id="p_backend" name="p_backend" type="radio" value="Back-End">Back-End
+		<input id="p_projectmanage" name="p_projectmanage" type="radio" value="Project Manager">Project Manager
+		<br /> <br />
+		<label for="preference">Desired Team Number:</label>
+		<br />
+		<input id="23dev" name="23dev" type="radio" value="2-3">2-3 developers
+		<input id="34dev" name="34dev" type="radio" value="3-4">3-4 developers
+		<input id="46dev" name="46dev" type="radio" value="4-6">4-6 developers
 		</fieldset>
-
+		<fieldset id="availablility">
+		<legend>Availability</legend>
+		<label id="weekly">Weekly Hours</label>
+		<br />
+		<input id="ten_hours" name="ten_hours" type="radio" value="10">Ten Hours
+		<input id="fifteen_hours" name="fifteen_hours" type="radio" value="15">Fifteen Hours
+		<input id="twenty_hours" name="twenty_hours" type="radio" value="20">Twenty Hours
+		<input id="twentyfive_hours" name="twentyfive_hours" type="radio" value="25">Twenty-Five Hours
+		<input id="thirty_hours" name="thirty_hours" type="radio" value="30">Thirty Hours
+		<br /><br />
+		<label id="weekly">Weekly Availability</label>
+		<br />
+		<input id="morning" name="ten_hours" type="radio" value="morning">Mornings (ie. Between 8am - 12pm)<br />
+		<input id="afternoon" name="fifteen_hours" type="radio" value="afternoon">Afternoons(ie. Between 12pm - 5pm)<br />
+		<input id="evening" name="twenty_hours" type="radio" value="evening">Evenings(ie. After 5pm)<br />
+		
+		<br />
+		<label for="other">Other Availability:</label><br />
+		<input id="other" name="other" type="text" size="40" placeholder="Please specify your availiablity">
+				<br /><br />
+		<label id="pdev">Preffered Development:</label><br />
+		
+		<input id="weekdays" name="weekdays" type="radio" value="weekdays">Weekdays
+		<input id="weekends" name="weekends" type="radio" value="weekends">Weekends
+		<input id="both" name="both" type="radio" value="both">Both
+<br /><br />
+		<label id="pdev">Ideal Project Duration:</label><br />
+		
+		<input id="onemonth" name="onemonth" type="radio" value="1"> 1 Month
+		<input id="twomonth" name="twomonth" type="radio" value="2">2-3 Months
+		<input id="threemonth" name="threemonth" type="radio" value="3">3-4 Months
+		<input id="fivemonth" name="fivemonth" type="radio" value="5">5-6 Months
+		</fieldset>
 		<input type="submit" id="submit" value="submit">
 	</form>
 
