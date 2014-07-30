@@ -11,7 +11,11 @@
 	<h2>
 		Your Project
 	</h2>
-	<img src="./imgs/pageGears.png">
+	<!-- <img src="./imgs/pageGears.png"> -->
+
+	<div id="files">
+	
+	</div>
 </div>
 <?php
 include 'includes/footer.php';

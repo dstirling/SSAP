@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Log In</title>
+<head><title>Reviews</title>
 
 <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Lobster|Shadows+Into+Light|Francois+One|Varela+Round|Indie+Flower|Alegreya|Pacifico|Architects+Daughter|Lobster+Two' rel='stylesheet' type='text/css'>
 <link href="./styles/styles.css" type="text/css" rel="stylesheet" />
