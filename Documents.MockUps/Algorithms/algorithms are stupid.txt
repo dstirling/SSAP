@@ -1,0 +1,5 @@
+step by step process and calculations that are used to solve a problem.  think of it as a set of ingredients. 
+take input and weigh by priority.
+will depend on database schema.
+rates something 7 of 10, and another option 9 out of 10 their total would be 16 of 20.
+Matching numbers, not words. people who are compatable would have high score ratings in categories, except role experience because we want them to be different. 
