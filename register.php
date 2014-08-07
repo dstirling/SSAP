@@ -53,7 +53,7 @@
 <br />
 		<label for="visualbasic"> VB:</label>
 <br />
-		<input id="visualbasic" name="visualbasic" type="radio" value="none">None
+		<input id="visualbasic" name="visualbasic" type="radio" value="none">None.
 		<input id="visualbasic" name="visualbasic" type="radio" value="1-6 months">1-6 months
 		<input id="visualbasic" name="visualbasic" type="radio" value="6-12 months">6-12 months
 		<br />
