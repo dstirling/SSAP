@@ -1,4 +1,6 @@
 <?php
+//sign up for PROJETS. 
+
 
 class registerClass{
 
