@@ -1,3 +1,11 @@
+<?php
+//load the core/init file
+require_once 'core/init.php'; // this contains database, cookie, session configuration info, and also loads required classes/functions.
+
+echo Config::get('mysql/host'); //should return 127.0.0.1 (defined in core init file)
+//var_dump(Config::get('mysql/host')); 
+
+
 <!DOCTYPE html>
 <html>
 <head>
