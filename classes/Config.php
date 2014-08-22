@@ -1,12 +1,17 @@
 <?php
-class Config {
-	public static function get($path = null) {
-		if($path) {
+class Config 
+{
+	public static function get($path = null) 
+	{
+		if($path) 
+		{
 			$config = $GLOBALS['config']; //remember, this is automatically created/required in the core/init file
 			$path = explode('/', $path); //divides the string into an array whenever an "/" is encountered
 
-			foreach($path as $p) {
-				if(isset($config[$p])) {
+			foreach($path as $p) 
+			{
+				if(isset($config[$p])) 
+				{
 					//echo $p . ' SET';
 					$config = $config[$p];
 				}
