@@ -10,15 +10,24 @@ require_once 'core/init.php'; // this contains database, cookie, session configu
 //DB::getInstance(); //gets the database connection.  
 //test DB::getInstance(); by changing values in coreinit file, like username
 
-$user = DB::getInstance()->query("SELECT users_username FROM users WHERE users_username = ?", array('alex'));
+//this is the traditional way of doing queries.  
+//$user = DB::getInstance()->query("SELECT users_username FROM users WHERE users_username = ?", array('alex'));
 
-if($user->error())
+//how about we try making a better query builder?
+$user = DB::getInstance()->get('users', array('users_username', '=', 'Grimllock' ));
+//$user = DB::getInstance()->get('users', array('users_group', '=', '1' ));//test.
+//$user = DB::getInstance()->get('users', array('users_username', '=', 'Grimlockfdsajfp' ));//test
+
+// this will translate the parameters in the get method into a query that says SELECT users_username FROM users WHERE users_username = will
+// allows us to skip writing full queries.  
+
+if(!$user->count())
 {
-	echo 'There is an error';
+	echo 'There are no results';
 }
 else 
 {
-	echo 'There is no error';
+	echo 'There are this many results: ' . $user->count();
 }
 
 ?>

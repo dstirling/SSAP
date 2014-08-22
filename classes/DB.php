@@ -39,7 +39,7 @@ class DB
 		return self::$_instance; // return the db object
 	}
 
-	//query builder
+	//query
 	public function query($sql, $params = array()) //$sql is the broad sql statement.  $params is an array of the query terms.  
 	{
 		$this->_error = false; //resets the error... so that we don't get the error value of the previous query.
@@ -69,13 +69,45 @@ class DB
 		return $this; //returns the object with any properties it has been assigned (like results, error, count)
 	}
 
+	public function queryBuilder($action, $table, $where = array())// this can (and maybe should) be private.  won't be used anywhere other than db
+	{
+		if(count($where) === 3) // the $where array must have 3 items because we need "WHERE username(#1) =(#2) will(#3)".  Anything less and the query is incomplete.
+		{
+			$goodOperators = array('=', '<', '>', '>=', '<=');  // we're defining possible acceptable operations here.  Can add more if the need arises.
+			$column = $where[0]; // these three will come from the $where array.  
+			$operator = $where[1];
+			$value = $where[2];
+ 
+			if(in_array($operator, $goodOperators)) //we're making sure $operator is one of the $goodOperators
+			{
+				$sql = "{$action} FROM {$table} WHERE {$column} {$operator} ?";
+				if(!$this->query($sql, array($value))->error()) //make sure this query does not make an error.  query function above.
+				{
+					return $this; //returns the entire object if no errors  
+				}
+			}
+		}
+		return false; //COME BACK TO REVIEW THIS
+	}
 	
-	
+	public function get($table, $where) 
+	{
+		return $this->queryBuilder('SELECT *', $table, $where);
+	}
 
+	public function delete($table, $where)
+	{
+		return $this->queryBuilder('DELETE', $table, $where);
+	}
 
 	public function error() 
 	{
 		return $this->_error;
+	}
+
+	public function count()
+	{
+		return $this->_count;
 	}
 } 
 
