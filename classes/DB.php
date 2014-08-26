@@ -39,7 +39,8 @@ class DB
 		return self::$_instance; // return the db object
 	}
 
-	//query
+	//query 
+	//example: getInstance()->query("SELECT users_username FROM users WHERE users_username = ?", array('alex'));
 	public function query($sql, $params = array()) //$sql is the broad sql statement.  $params is an array of the query terms.  
 	{
 		$this->_error = false; //resets the error... so that we don't get the error value of the previous query.
@@ -98,6 +99,71 @@ class DB
 	public function delete($table, $where)
 	{
 		return $this->queryBuilder('DELETE', $table, $where);
+	}
+
+	public function insert($table, $fields = array())
+	{
+		// if(count($fields)) //check to see if the array for the fields has any data at 
+		// { //not extremely necessary to have this count
+			$keys = array_keys($fields); 
+			$values = '';
+			$x = 1;
+
+			foreach($fields as $field)
+			{
+				$values .= '?';
+				if($x < count($fields)) 
+				{
+					$values .= ', ';
+				}
+				$x++;
+
+			}
+			// die($values);
+			//sample query: INSERT INTO users (username, password, salt)
+			$sql = "INSERT INTO users (`" . implode('`, `', $keys) . "`) VALUES ({$values})";
+			//echo $sql;
+
+			if(!$this->query($sql, $fields)->error())
+			{
+				return true; //true indicates successful insert.
+			}
+		//} //not extremely necessary to have this count
+		return false;
+	}
+
+	public function update($table, $id, $fields = array())
+	{
+		$set = '';
+		$x = 1;
+
+		foreach($fields as $name => $value) {
+			$set .= "{$name} = ?";
+			if($x < count($fields))
+			{
+				$set .= ', ';
+			}
+			$x++;
+		}
+		//die($set);
+		$sql = "UPDATE {$table} SET {$set} WHERE users_id = {$id}";
+		//echo $sql;
+		
+		if($this->query($sql, $fields)->error())
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public function results()//all results
+	{
+		return $this->_results;
+	}
+
+	public function first()//just the first from all results
+	{
+		return $this->results()[0];
 	}
 
 	public function error() 
