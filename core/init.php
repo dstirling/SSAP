@@ -20,7 +20,8 @@ $GLOBALS['config'] = array(
 		'cookie_expiry' => 604800 //in seconds.  604800 is a week.  86400 is a day.  3600 is an hour.
 	), 
 	'session' => array(  //session name, tokens?
-		'session_name' => 'user'
+		'session_name' => 'user',
+		'token_name' => 'token' // for combating xss/csrf
 	), 
 );
 

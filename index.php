@@ -2,7 +2,11 @@
 //load the core/init file
 require_once 'core/init.php'; // this contains database, cookie, session configuration info, and also loads required classes/functions.
 
+if(Session::exists('home'))
+{
+	echo Session::flash('home');
 
+}
 //echo Config::get('mysql/host'); //should return 127.0.0.1 (defined in core init file)
 // note: don't have to require classes/Config.php because core init registers it for you.
 //var_dump(Config::get('mysql/host')); 
@@ -31,15 +35,15 @@ require_once 'core/init.php'; // this contains database, cookie, session configu
 // 	'users_group' => '2'
 // 	));
 
-$userUpdate = DB::getInstance()->update('users', 6, array(
-	'users_username' => 'modestmouse',
+//$userUpdate = DB::getInstance()->update('users', 6, array(
+	//'users_username' => 'modestmouse',
 	// 'users_password' => 'qwerty',
 	// 'users_salt' => 'salt', 
-	'users_firstname' => 'Modest'//,
+	//'users_firstname' => 'Modest'//,
 	// 'users_lastname' => 'Mouse', 
 	// 'users_joined' => '', 
 	// 'users_group' => '2'
-	));
+	//));
 
 
 // if(!$user->count())
