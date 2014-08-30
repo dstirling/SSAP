@@ -7,6 +7,10 @@ if(Session::exists('home'))
 	echo Session::flash('home');
 
 }
+
+//echo Session::get(Config::get('session/session_name')); // this should match the id of the loged in user.
+
+
 //echo Config::get('mysql/host'); //should return 127.0.0.1 (defined in core init file)
 // note: don't have to require classes/Config.php because core init registers it for you.
 //var_dump(Config::get('mysql/host')); 
