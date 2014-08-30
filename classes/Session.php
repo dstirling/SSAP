@@ -7,7 +7,7 @@ class Session
 	}
 
 
-	public static function put($name, $value) 
+	public static function put($name, $value) //value is whichever data we're passing along in User::login
 	{
 		return $_SESSION[$name] = $value;
 	}

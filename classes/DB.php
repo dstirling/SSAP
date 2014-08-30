@@ -58,6 +58,8 @@ class DB
 			if($this->_query->execute()) //if the query is executed successfully...
 			{
 				echo 'Query is valid and executable<br />';
+				print_r($this->_query);
+				echo '<br />';
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ); //get the results set
 				$this->_count = $this->_query->rowCount(); //get the number of results
 			}

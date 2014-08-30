@@ -29,11 +29,11 @@
 			{
 				///log in user
 				$user = new User();
-				$login = $user->login(Input::get('username'), Input::get('password'));
+				$login = $user->login(Input::get('username'), Input::get('password')); //get the username and password from the form
 
 				if($login)
 				{
-					echo 'Success';
+					Redirect::to('index.php');
 				}
 				else 
 				{

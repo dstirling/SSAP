@@ -8,6 +8,21 @@ if(Session::exists('home'))
 
 }
 
+$user = new User(); 
+if($user->isLoggedIn())
+{
+	//echo 'User <strong>' . $user->data()->users_username . '</strong> is logged in';
+	?>
+	<p>Hello <a href="#"> <?php echo escape($user->data()->users_username); ?></a>!</p>
+	<ul>
+		<li><a href="logout.php">Logout</a></li>
+	</ul>
+	<?php
+}
+else
+{
+	echo '<p><a href="login.php">log in</a> or <a href="registration.php">register</a></p>';
+}
 //echo Session::get(Config::get('session/session_name')); // this should match the id of the loged in user.
 
 
