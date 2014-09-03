@@ -29,7 +29,9 @@
 			{
 				///log in user
 				$user = new User();
-				$login = $user->login(Input::get('username'), Input::get('password')); //get the username and password from the form
+
+				$remember = (Input::get('remember') === 'on') ? true : false;
+				$login = $user->login(Input::get('username'), Input::get('password'), $remember); //get the username and password from the form
 
 				if($login)
 				{
@@ -69,6 +71,14 @@
 		</div>
 		<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 	    <input type="submit" id="submit" value="Log In">
+	
+	    <div class="field">
+	    	<label for="remember">
+	    		<input type="checkbox" name="remember" id="remember">Stay Logged In
+	    	</label>
+	    </div>
+
+
 	</form>
 
 

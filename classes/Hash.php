@@ -1,4 +1,5 @@
 <?php
+//all functions related to hashing and salting
 
 class Hash 
 {
@@ -14,6 +15,7 @@ class Hash
 		return mcrypt_create_iv($length); //create a random string of characters of a certain length.
 	}
 
+	//create a unique id
 	public static function unique()
 	{
 		return self::make(uniqid());

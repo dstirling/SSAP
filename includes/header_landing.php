@@ -1,7 +1,7 @@
 	<header class="head">
 
 	<div class="logo"><img class="logo" src="./imgs/logotem.jpg"></div>
-	<p><a href="./home.php">Login Here</a></p>
+	<p><a href="login.php">Login Here</a></p>
 	<nav>
 	
 <ul><li><a href="home.php">Home</a></li>

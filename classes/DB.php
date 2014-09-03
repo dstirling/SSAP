@@ -19,12 +19,12 @@ class DB
 		{
 			$this->_pdo = new PDO('mysql:host=' . Config::get('mysql/host') . ';dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
 			// pdo('type:host=hostname;dbname=databasename', 'username', 'password')
-			echo 'DB is connected<br />'; 
+			//echo 'DB is connected<br />'; 
 
 		}
 		catch(PDOException $e) 
 		{
-			echo 'DB connection problem: ';
+			//echo 'DB connection problem: ';
 			die($e->getMessage());
 		}
 	}
@@ -57,9 +57,9 @@ class DB
 			}
 			if($this->_query->execute()) //if the query is executed successfully...
 			{
-				echo 'Query is valid and executable<br />';
-				print_r($this->_query);
-				echo '<br />';
+				//echo 'Query is valid and executable<br />';
+				//print_r($this->_query);
+				//echo '<br />';
 				$this->_results	= $this->_query->fetchAll(PDO::FETCH_OBJ); //get the results set
 				$this->_count = $this->_query->rowCount(); //get the number of results
 			}
@@ -123,10 +123,10 @@ class DB
 			}
 			// die($values);
 			//sample query: INSERT INTO users (username, password, salt)
-			$sql = "INSERT INTO users (`" . implode('`, `', $keys) . "`) VALUES ({$values})";
+			$sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES ({$values})";
 			//echo $sql;
 
-			if(!$this->query($sql, $fields)->error())
+			if(!$this->query($sql, $fields)->error()) // has no error
 			{
 				return true; //true indicates successful insert.
 			}
