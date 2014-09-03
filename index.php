@@ -13,16 +13,25 @@ if($user->isLoggedIn())
 {
 	//echo 'User <strong>' . $user->data()->users_username . '</strong> is logged in';
 	?>
-	<p>Hello <a href="#"> <?php echo escape($user->data()->users_username); ?></a>!</p>
+	<p>Hello <a href="profile.php?user=<?php echo escape($user->data()->users_username); ?>"> <?php echo escape($user->data()->users_username); ?></a>!</p>
 	<ul>
 		<li><a href="logout.php">Logout</a></li>
+		<li><a href="update.php">Update Profile</a></li>
+		<li><a href="changepassword.php">Change Password</a></li>
 	</ul>
 	<?php
+
+	if($user->hasPermission('admin'))
+	{
+		echo '<strong>You are an admin!</strong>';
+	}
 }
 else
 {
 	echo '<p><a href="login.php">log in</a> or <a href="registration.php">register</a></p>';
 }
+
+
 //echo Session::get(Config::get('session/session_name')); // this should match the id of the loged in user.
 
 

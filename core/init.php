@@ -15,7 +15,7 @@ $GLOBALS['config'] = array(
 		'password' => '',
 		'db' => 'ssap'
 	),
-	'remember' => array(  //cookie names, expiry
+	'remember' => array(  //cookie name, expiry
 		'cookie_name' => 'hash', 
 		'cookie_expiry' => 604800 //in seconds.  604800 is a week.  86400 is a day.  3600 is an hour.
 	), 
@@ -42,4 +42,15 @@ spl_autoload_register(function($class){
 //add required function files
 require_once 'functions/sanitize.php';
 
+if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) //if this cookie exists AND user session does not exist...
+{
+	$hash = Cookie::get(Config::get('remember/cookie_name'));
+	$hashCheck = DB::getInstance()->get('sessions', array('sessions_hash', '=', $hash));
+
+	if($hashCheck->count())
+	{
+		$user = new User($hashCheck->first()->sessions_userid);
+		$user->login();
+	}
+}
 ?>
